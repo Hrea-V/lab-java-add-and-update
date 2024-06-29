@@ -62,13 +62,9 @@ Create the following routes as efficiently as possible, using validation where a
 6. **Write a short answer in README.md**. In your `README.md`, write a short answer to the following questions:
 
    - Did you use the same type of route to update patient information as to update an employee's department?
-   - no
    - Why did you choose the selected strategy?
-   - short and simple way
    - What are the advantages and disadvantages of the strategies you chose for creating these routes?
-   - easy of use
    - What is the cost-benefit between using `PUT` and `PATCH`?
-   - `PUT` can be use to add new information, while the `PATCH` can be use to update the information. depending on the work to be done, its better to use `PUT`. as using `PATCH` will be overwriting information.
 
 <br>  
 
@@ -554,3 +550,14 @@ public class Employee {
   ```
 
 </details>
+
+
+   - Did you use the same type of route to update patient information as to update an employee's department?
+   - no
+   - Why did you choose the selected strategy?
+   - short and simple way
+   - What are the advantages and disadvantages of the strategies you chose for creating these routes?
+   - easy of use
+   - What is the cost-benefit between using `PUT` and `PATCH`?
+   - `PUT` can be use to add new information, while the `PATCH` can be use to update the information. depending on the work to be done, its better to use `PUT`. as using `PATCH` will be overwriting information.
+

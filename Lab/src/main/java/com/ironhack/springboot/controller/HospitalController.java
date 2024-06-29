@@ -6,10 +6,7 @@ import com.ironhack.springboot.model.Patient;
 import com.ironhack.springboot.service.EmployeeService;
 import com.ironhack.springboot.service.PatientService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -32,31 +29,31 @@ public class HospitalController {
 //    Update patient information: Create a route to update patient information (the user should be able to update any patient information through this route).
 
     //Add new patient: Create a route to add a new patient.
-    @GetMapping("/Patients/add/{patientId}/{name}/{dateOfBirth}/{admittingDoctorId}")
+    @PostMapping("/Patients/add/{patientId}/{name}/{dateOfBirth}/{admittingDoctorId}")
     public void addPatient(@PathVariable("patientId") Long patientId, @PathVariable("name") String name, @PathVariable("dateOfBirth") Date dateOfBirth, @PathVariable("admittingDoctorId") Employee admittingDoctorId) {
         patientService.addPatient(patientId, name, dateOfBirth, admittingDoctorId);
     }
 
     //Add new doctor: Create a route to add a new doctor.
-    @GetMapping("/Employees/add/{employeeId}/{department}/{name}/{status}")
+    @PostMapping("/Employees/add/{employeeId}/{department}/{name}/{status}")
     public void addEmployee(@PathVariable("employeeId") Long employeeId, @PathVariable("department") String department, @PathVariable("name") String name, @PathVariable("status") EmployeeStatus status) {
         employeeService.addEmployee(employeeId, department, name, status);
     }
 
     //Change doctor status: Create a route to change a doctor's status.
-    @GetMapping("/Employees/status/{employeeId}/{status}")
+    @PutMapping("/Employees/status/{employeeId}/{status}")
     public void changeEmployeeStatus(@PathVariable("employeeId") Long employeeId, @PathVariable("status") EmployeeStatus status) {
         employeeService.changeEmployeeStatus(employeeId, status);
     }
 
     //Update doctor's department: Create a route to update a doctor's department.
-    @GetMapping("/Employees/department/{employeeId}/{department}")
+    @PutMapping("/Employees/department/{employeeId}/{department}")
     public void updateEmployeeDepartment(@PathVariable("employeeId") Long employeeId, @PathVariable("department") String department) {
         employeeService.updateEmployeeDepartment(employeeId, department);
     }
 
     //Update patient information: Create a route to update patient information (the user should be able to update any patient information through this route).
-    @GetMapping("/Patients/update/{patientId}/{name}/{dateOfBirth}/{admittingDoctorId}")
+    @PutMapping("/Patients/update/{patientId}/{name}/{dateOfBirth}/{admittingDoctorId}")
     public void updatePatient(@PathVariable("patientId") Long patientId, @PathVariable("name") String name, @PathVariable("dateOfBirth") Date dateOfBirth, @PathVariable("admittingDoctorId") Employee admittingDoctorId) {
         patientService.updatePatient(patientId, name, dateOfBirth, admittingDoctorId);
     }
